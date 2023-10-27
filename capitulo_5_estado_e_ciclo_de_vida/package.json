@@ -1,5 +1,5 @@
 {
-  "name": "capitulo_4_componentes_e_props",
+  "name": "capitulo_5_estado_e_ciclo_de_vida",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
