@@ -1,10 +1,15 @@
-import React from "react";
-
-function TodoItem({ text, onDelete }) {
+function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <li className="TodoItem">
-      <span>{text}</span>
-      <button onClick={onDelete}>Excluir</button>
+      <span
+        style={{
+          textDecoration: todo.isCompleted ? "line-through" : "none",
+        }}
+        onClick={onToggle}
+      >
+        {todo.text}
+      </span>
+      <button onClick={onDelete}>Deletar</button>
     </li>
   );
 }

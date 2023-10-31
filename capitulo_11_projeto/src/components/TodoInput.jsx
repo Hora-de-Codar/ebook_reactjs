@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function TodoInput({ onAdd }) {
   const [text, setText] = useState("");
 
-  const handleChange = (event) => {
-    setText(event.target.value);
-  };
-
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (text.trim()) {
-      onAdd(text);
+      onAdd({ text, isCompleted: false });
       setText("");
     }
   };
 
   return (
-    <div className="TodoInput">
-      <input type="text" value={text} onChange={handleChange} />
-      <button onClick={handleClick}>Adicionar</button>
-    </div>
+    <form onSubmit={handleSubmit} className="TodoInput">
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <button type="submit">Adicionar</button>
+    </form>
   );
 }
 
